@@ -13,11 +13,11 @@ PGObject::Type::BigFloat - Math::BigFloat wrappers for PGObject classes
 
 =head1 VERSION
 
-Version 1.00
+Version 1.0.1
 
 =cut
 
-our $VERSION = '1.00';
+our $VERSION = '1.0.1';
 
 
 =head1 SYNOPSIS
@@ -39,9 +39,9 @@ our $VERSION = '1.00';
 
 sub register{
     my $self = shift @_;
+    my %args = @_;
     croak "Can't pass reference to register \n".
           "Hint: use the class instead of the object" if ref $self;
-    my %args = @_;
     my $registry = $args{registry};
     $registry ||= 'default';
     my $types = $args{types};
@@ -140,7 +140,7 @@ L<http://search.cpan.org/dist/PGObject-Type-BigFloat/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2013 Chris Travers.
+Copyright 2013-2014 Chris Travers.
 
 This program is released under the following license: BSD
 
