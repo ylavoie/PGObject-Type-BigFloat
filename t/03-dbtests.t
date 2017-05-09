@@ -2,6 +2,7 @@ use Test::More;
 use DBI;
 use PGObject;
 use PGObject::Type::BigFloat;
+use Carp::Always;
 PGObject::Type::BigFloat->register();
 
 my $functions = {
