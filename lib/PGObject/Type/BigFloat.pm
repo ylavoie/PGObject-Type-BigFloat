@@ -13,11 +13,11 @@ PGObject::Type::BigFloat - Math::BigFloat wrappers for PGObject classes
 
 =head1 VERSION
 
-Version 2
+Version 2.001
 
 =cut
 
-our $VERSION = 2.000000;
+our $VERSION = 2.001000;
 
 
 =head1 SYNOPSIS
@@ -96,6 +96,39 @@ sub is_undef {
     my ($self, $set) = @_; 
     $self->{_pgobject_undef} = $set if defined $set;
     return $self->{_pgobject_undef};
+}
+
+=head2 accuracy(optionally $set)
+
+Ensure that BigFloat receives its class as ref
+
+=cut
+
+sub accuracy {
+    my $self = shift;
+    return Math::BigFloat->accuracy(@_);
+}
+
+=head2 div_scale(optionally $set)
+
+Ensure that BigFloat receives its class as ref
+
+=cut
+
+sub div_scale {
+    my $self = shift;
+    return Math::BigFloat->div_scale(@_);
+}
+
+=head2 precision(optionally $set)
+
+Ensure that BigFloat receives its class as ref
+
+=cut
+
+sub precision {
+    my $self = shift;
+    return Math::BigFloat->precision(@_);
 }
 
 =head1 AUTHOR
